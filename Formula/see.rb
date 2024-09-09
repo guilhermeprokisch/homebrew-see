@@ -1,20 +1,20 @@
 class See < Formula
   desc "A cute cat(1)"
   homepage "https://github.com/guilhermeprokisch/see"
-  version "0.4.2"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/guilhermeprokisch/see/releases/download/v0.4.2/see-cat-aarch64-apple-darwin.tar.xz"
-      sha256 "07820a82f61182eeb07b0b48202fbe06ac2f887e3068dbca97b8645a5213e0c1"
+      url "https://github.com/guilhermeprokisch/see/releases/download/v0.5.0/see-cat-aarch64-apple-darwin.tar.xz"
+      sha256 "7998f3424be9cb2069fac72c1efb5d1e78854e8ae7e3df4d9fe63d234eb91325"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/guilhermeprokisch/see/releases/download/v0.4.2/see-cat-x86_64-apple-darwin.tar.xz"
-      sha256 "3658cb5591d908408314557cd3b43915364c25f65e3a915917e2be4a765d5948"
+      url "https://github.com/guilhermeprokisch/see/releases/download/v0.5.0/see-cat-x86_64-apple-darwin.tar.xz"
+      sha256 "099f48aa637fceeb1eb2503ba8bb9875300adb0807da0255ce201b35d766b6de"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/guilhermeprokisch/see/releases/download/v0.4.2/see-cat-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "4a749a752300ebf6389d45a0f6990d47c40785ab960e77d1b339540652001a24"
+    url "https://github.com/guilhermeprokisch/see/releases/download/v0.5.0/see-cat-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "7823de76c26c2528aeb5823a0eb33d8b6b8ee3bf87fa944834c4afa520370179"
   end
   license "MIT"
 
