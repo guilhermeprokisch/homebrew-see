@@ -5,16 +5,16 @@ class See < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.1/see-cat-aarch64-apple-darwin.tar.xz"
-      sha256 "c3d74bce75fe7c0d3d5a4dfa2b82d50eb577fee5d5baee2a72b7016fdd05371e"
+      sha256 "8c4dfe608d0d20bfab1552560e58b5338c2b17f2d0d111e708d0dbe0e3611f5b"
     end
     if Hardware::CPU.intel?
       url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.1/see-cat-x86_64-apple-darwin.tar.xz"
-      sha256 "ef621b9efef74e8a270726085917bd53c5daad2c335d3293c8cc42b3b40a101a"
+      sha256 "77c5a6c3cc41702e65a2911637505db323a44ae00a5361664fe08f54d7454cb0"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
       url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.1/see-cat-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ba3f72a760d7ddef436c115765df88156d23782fd88efd314256ec61c6940564"
+      sha256 "8c3e787b4075ca36441bece8133dfc22736b2d9a8f18a3b278b0223d17d4114e"
   end
   license "MIT"
 
