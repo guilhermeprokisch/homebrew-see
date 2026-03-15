@@ -1,29 +1,31 @@
 class See < Formula
   desc "A cute cat(1)"
   homepage "https://github.com/guilhermeprokisch/see"
-  version "0.9.0"
+  version "0.9.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.0/see-cat-aarch64-apple-darwin.tar.xz"
-      sha256 "fb755669fc4e2e6762ec027aebb70d5fb4ee250e05b056faccbb1ab4b5f0ae86"
+      url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.1/see-cat-aarch64-apple-darwin.tar.xz"
+      sha256 "c3d74bce75fe7c0d3d5a4dfa2b82d50eb577fee5d5baee2a72b7016fdd05371e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.0/see-cat-x86_64-apple-darwin.tar.xz"
-      sha256 "4b118d026e96fa329f6819846f0a4e8f7d3a9218f3befcfc533dffbaaae3760e"
+      url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.1/see-cat-x86_64-apple-darwin.tar.xz"
+      sha256 "ef621b9efef74e8a270726085917bd53c5daad2c335d3293c8cc42b3b40a101a"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-      url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.0/see-cat-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "43d891ac43547b1a1d70a3057b07ebbc8c67a9b787eb4ea3919a47367ccb961e"
+  if OS.linux?
+    if Hardware::CPU.intel?
+      url "https://github.com/guilhermeprokisch/see/releases/download/v0.9.1/see-cat-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "ba3f72a760d7ddef436c115765df88156d23782fd88efd314256ec61c6940564"
+    end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-pc-windows-gnu":    {},
-    "x86_64-unknown-linux-gnu": {},
-  }.freeze
+    "aarch64-apple-darwin": {},
+    "x86_64-apple-darwin": {},
+    "x86_64-pc-windows-gnu": {},
+    "x86_64-unknown-linux-gnu": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -41,9 +43,15 @@ class See < Formula
   end
 
   def install
-    bin.install "see" if OS.mac? && Hardware::CPU.arm?
-    bin.install "see" if OS.mac? && Hardware::CPU.intel?
-    bin.install "see" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "see"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "see"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "see"
+    end
 
     install_binary_aliases!
 
